@@ -9,15 +9,45 @@
 	window.onload = function() {
 		paper.setup('canvas');
 
-    var myCircle = new Path.Circle(new Point(canvas.width/4, canvas.height/4), 50);
-      myCircle.strokeColor = 'black';
-      myCircle.selected = true;
+     function drawCircle(x, y,radius,color){
+       var myCircle = new Path.Circle(new Point(x, y), radius);
+         myCircle.strokeColor = 'black';
+         myCircle.fillColor = color
+         myCircle.fillColor.hue += (Math.random()*360)
+         myCircle.fillColor.saturation = 1
+         myCircle.fillColor.brightness = 1
+         function onFrame(event) {
+        	// Each frame, change the fill color of the path slightly by
+        	// adding 1 to its hue:
+        	myCircle.fillColor.hue += 1;
+        }
 
-    var myPath = new Path();
-    myPath.strokeColor = 'black';
-    myPath.add(new Point(40, 90));
-myPath.add(new Point(90, 40));
-myPath.add(new Point(140, 90));
+     }
+     for(let i = 0; i < 50; i++){
+       color = "green"
+       x = Math.random()*canvas.width/2
+       y = Math.random() * canvas.height/2
+     drawCircle(x,y, 50, color)
+    }
+
+    function drawRectangle(){
+    point = [(Math.random()*canvas.width/2), (Math.random()*canvas.height/2)]
+    size = [100, 50]
+    var myRect = new Path.Rectangle(point,size)
+    myRect.fillColor =  'red'
+    myRect.fillColor.hue += (Math.random()*360)
+    myRect.fillColor.saturation = 1
+    myRect.fillColor.brightness = 1
+    myRect.strokeWidth = 10
+    function onFrame(event) {
+     myRect.rotate(10)
+    }
+
+    }
+    // for(let i = 0; i < 50; i++){
+    // let rect = drawRectangle()
+    //
+    // }
 
     console.log(canvas)
   }

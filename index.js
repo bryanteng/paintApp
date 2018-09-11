@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  var ws = new WebSocket('ws://localhost:8080');
+  // event emmited when connected
+  ws.onopen = function () {
+      console.log('websocket is connected ...')
+      // sending a send event to websocket server
+      ws.send('connected')
+  }
+  // event emmited when receiving message
+  ws.onmessage = function (ev) {
+      console.log(ev);
+  }
+  // console.log(context);
   var color_form = document.getElementById("color-form")
   let canvas = document.getElementById("canvas")
   let context = canvas.getContext('2d')
@@ -41,10 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
       path.strokeWidth -=1
     })
 
-    let clear_button = document.getElementById("clear-button")
-    clear_button.addEventListener('click',() => {
-      console.log(layers)
-    })
-  }
+  }//end window on load
 
 })
