@@ -41,10 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       path.strokeWidth -=1
     })
 
-    let clear_button = document.getElementById("clear-button")
-    clear_button.addEventListener('click',() => {
-      console.log(layers)
-    })
   }
 
 })
