@@ -3,11 +3,81 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    
     <script type="text/javascript" src="js/paper.js"></script>
     <script type="text/paperscript" canvas = "canvas"></script>
 
+    <style>
+      #palette {
+        /* display:inline-flex; */
+        position:absolute;
+        border-color: #000;
+        border-width: light;
+        border: solid;
+        width: 50px;
+        height: 120px;
+        top: 70px;
+        left: 70px;
+        float: left
+      }
+      .color {
+        border-color: #000;
+        border-width: thin;
+        /* border: solid; */
+        width: 12px;
+        height: 12px;
+        margin: 5px;
+        display: inline-block
+      }
+      #red {
+        background-color: red
+      }
+      #orange {
+        background-color: orange
+      }
+      #yellow {
+        background-color: yellow
+      }
+      #green {
+        background-color: green
+      }
+      #blue {
+        background-color: blue
+      }
+      #indigo {
+        background-color: indigo
+      }
+      #violet {
+        background-color: violet
+      }
+      #black {
+        background-color: black;
+      }
+
+      #eraser {
+        border-radius: 50%;
+        font-size: 8px;
+        display: block;
+        margin: 0 auto;
+      }
+
+    </style>
   </head>
   <body>
+
+
+
+    <div id="palette">
+      <div class="color" id="red"></div>
+      <div class="color" id="orange"></div>
+      <div class="color" id="yellow"></div>
+      <div class="color" id="green"></div>
+      <div class="color" id="blue"></div>
+      <div class="color" id="indigo"></div>
+      <div class="color" id="violet"></div>
+      <div class="color" id="black"></div>
+      <button id="eraser">Eraser!</button>
+    </div>
 
     <form id= "color-form" action="index.html" method="post">
       <label for="color">Color</label>
@@ -25,6 +95,7 @@
       <input type="submit" id = "submit-color" name="color-sumbit" value="Select Color">
     </form>
 
+    <p id="brush-width"></p>
     <button type="button" id="increase-width-button" name="button">increase brush size</button>
     <button type="button" id="decrease-width-button" name="button">decrease brush size</button>
 
