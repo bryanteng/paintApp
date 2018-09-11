@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let color = black;
     let strokeWidth = 1
     path.strokeColor = color
-    brushWidth.innerText = path.strokeWidth
+    brushWidth.innerText = `Change brush size ${path.strokeWidth}:`
 
     // Define a mousedown and mousedrag handler
 
@@ -38,10 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
       path.strokeColor = color
       path.strokeWidth = strokeWidth
 
-      // path.strokeColor = 'black';
       path.add(event.point);
-
-      console.log(path)
+      // let circleDraw = Path.Circle(event.point.x, event.point.y, 5)
+      console.log(event.point)
     }
     tool.onMouseDrag = function (event) {
       path.add(event.point);
@@ -55,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target.className === "color"){
         color = e.target.id
         path.strokeColor = color
-        console.log(path)
       }
     })
 
@@ -66,23 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
       brushWidth.innerText = strokeWidth
     })
 
-
-    // color_form.addEventListener('submit', (event) => {
-    //   let selected_color = document.getElementById("selected-color")
-    //   event.preventDefault();
-    //   path.strokeColor = selected_color.value
-    // })
-
-    let increase_width_button = document.getElementById("increase-width-button")
-    increase_width_button.addEventListener('click', () => {
-      strokeWidth++
-      brushWidth.innerText = strokeWidth
+    let brush_size_slider = document.getElementById("brush-size-slider")
+    brush_size_slider.addEventListener('input', () => {
+      strokeWidth= brush_size_slider.value
+      brushWidth.innerText = `Change brush size ${strokeWidth}:`
     })
 
-    let decrease_width_button = document.getElementById("decrease-width-button")
-    decrease_width_button.addEventListener('click',() => {
-      strokeWidth--
-      brushWidth.innerText = strokeWidth
-    })
   }
 })

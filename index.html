@@ -3,14 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    
+
     <script type="text/javascript" src="js/paper.js"></script>
     <script type="text/paperscript" canvas = "canvas"></script>
 
     <style>
       #palette {
         /* display:inline-flex; */
-        position:absolute;
         border-color: #000;
         border-width: light;
         border: solid;
@@ -18,7 +17,7 @@
         height: 120px;
         top: 70px;
         left: 70px;
-        float: left
+        float: right
       }
       .color {
         border-color: #000;
@@ -53,6 +52,12 @@
       #black {
         background-color: black;
       }
+      #brown {
+        background-color: brown;
+      }
+      #grey {
+        background-color: grey;
+      }
 
       #eraser {
         border-radius: 50%;
@@ -65,7 +70,7 @@
   </head>
   <body>
 
-
+    <div class="side-bar">
 
     <div id="palette">
       <div class="color" id="red"></div>
@@ -75,29 +80,20 @@
       <div class="color" id="blue"></div>
       <div class="color" id="indigo"></div>
       <div class="color" id="violet"></div>
+      <div class="color" id="brown"></div>
+      <div class="color" id="grey"></div>
       <div class="color" id="black"></div>
+
       <button id="eraser">Eraser!</button>
     </div>
 
-    <form id= "color-form" action="index.html" method="post">
-      <label for="color">Color</label>
-      <select id= "selected-color">
-        <option value="red">Red</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-        <option value="orange">Orange</option>
-        <option value="indigo">Indigo</option>
-        <option value="violet">Violet</option>
-        <option value="white">White</option>
-        <option value="black">Black</option>
-      </select>
-      <input type="submit" id = "submit-color" name="color-sumbit" value="Select Color">
-    </form>
+    <div class="slidecontainer">
+      <p id="brush-width">Change brush size 1:</p>
+      <input type="range" min="1" max="25" value="1" class="slider" id="brush-size-slider">
+    </div>
 
-    <p id="brush-width"></p>
-    <button type="button" id="increase-width-button" name="button">increase brush size</button>
-    <button type="button" id="decrease-width-button" name="button">decrease brush size</button>
+
+    </div>
 
     <canvas id="canvas" width="500" height="500" style="border:3px solid #000000;"></canvas>
 
