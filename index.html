@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="js/paper.js"></script>
+    <script type="text/paperscript" canvas = "canvas"></script>
+
+  </head>
+  <body>
+
+    <form id= "color-form" action="index.html" method="post">
+      <label for="color">Color</label>
+      <select id= "selected-color">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+        <option value="indigo">Indigo</option>
+        <option value="violet">Violet</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
+      </select>
+      <input type="submit" id = "submit-color" name="color-sumbit" value="Select Color">
+    </form>
+
+    <button type="button" id = "clear-button" name="button">Clear</button>
+<!--
+    <button type="button" id="green-color-button" name="button">Green</button>
+    <button type="button" id="red-color-button" name="button">Red</button>
+    <button type="button" id="blue-color-button" name="button">Blue</button>
+
+    <button type="button" id="green-fill-color-button" name="button">Green Fill</button>
+    <button type="button" id="red-fill-color-button" name="button">Red fill </button>
+    <button type="button" id="blue-fill-color-button" name="button">Blue fill</button> -->
+
+    <button type="button" id="increase-width-button" name="button">increase brush size</button>
+    <button type="button" id="decrease-width-button" name="button">decrease brush size</button>
+
+
+    <canvas id="canvas" width="500" height="500" style="border:3px solid #000000;"></canvas>
+
+
+    <script type="text/javascript" src='index.js'></script>
+  </body>
+</html>

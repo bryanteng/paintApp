@@ -1,0 +1,7 @@
+{
+  "name": "paintapp",
+  "private": true,
+  "dependencies": {
+    "ws": "^6.0.0"
+  }
+}
